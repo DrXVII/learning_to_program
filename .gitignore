@@ -1,0 +1,6 @@
+# compiled binaries
+*program*
+*.o
+
+# editor and/or IDE temporaries
+*.swp
