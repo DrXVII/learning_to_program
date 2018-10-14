@@ -1,0 +1,5 @@
+= ABOUT
+
+This is repository is the place where I put all the small programs I do while going through programming learning material, reading books, etc.
+
+That said, this is probably going to be quite messy and full of experiments including questionable practices, inconsistencies, etc.
