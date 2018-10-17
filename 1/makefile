@@ -6,4 +6,7 @@ NAME = program
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CXX) -o $@ $^
+	$(CXX) $(CXX_F) -o $@ $^
+
+clean: 
+	rm -fv $(NAME)

@@ -19,6 +19,7 @@ void age_calculation();
 void operations_double();
 void operations_int();
 void repeated_words();
+void experiment();
 
 int main()
 {
@@ -40,8 +41,11 @@ void main_menu()
              << "3 - Operations exampe: double precicioin\n"
              << "4 - Operations exampe: integer\n"
              << "5 - Repeated words\n"
+             << "777 - Experiment\n"
              << "\n"
-             << "0 - Quit\n";
+             << "0 - Quit\n"
+             << "\n"
+             << "> ";
 
         //break if we have an end-of-input or IO errors
         if(!(cin >> sel)) {break;}
@@ -63,6 +67,9 @@ void main_menu()
             break;
         case 5:
             repeated_words();
+            break;
+        case 777:
+            experiment();
             break;
         default:
             cout << "invalid selection, try again\n";
@@ -139,20 +146,42 @@ void operations_int()
 
 void repeated_words()
 {
-    unsigned repetitions {0};
     string previous(" "); //using space because cin drops them
     string current;
+    unsigned repetitions {0};
+    unsigned word_counter {0};
 
     cout << "Pass an end of input character (Ctrl+d on unix) to finish.\n";
     cout << "Input sentence: ";
 
     while(cin >> current) {
+        ++word_counter;
         if(previous == current) {
-            cout << "repeated word: " << current << "\n";
             ++repetitions;
-            cout << "repetitions so far: " << repetitions << "\n";
+            cout << "repeated word: " << current << " (" << word_counter << ")\n"
+                 << "repetitions so far: " << repetitions << "\n";
         }
 
         previous = current;
     }
+}
+
+void experiment()
+{
+    int i {20000};
+    /* char c = i does not produce a warning on most compilers, while
+     * char c {i} does. (this initialization notation introduced in c++11) */
+    //char c {i};
+    int i2 {c};
+
+    if(i != i2) {
+        cout << "A narrowing conversion happened.\n"
+             << "i == " << i << "\n"
+             << "i2 == " << i2 << "\n";
+    }
+    else {
+        cout << "Wow, we have large chars.\n";
+    }
+
+    //cout << "nothing to look at here today\n";
 }
