@@ -11,6 +11,10 @@
 #include <algorithm>
 #include <cmath>
 //this should heep us covered until chapter 5 ^^^
+
+//homebrew
+#include "drill_1_3.hpp"
+
 using namespace std;
 
 void main_menu();
@@ -41,6 +45,7 @@ void main_menu()
              << "3 - Operations exampe: double precicioin\n"
              << "4 - Operations exampe: integer\n"
              << "5 - Repeated words\n"
+             << "6 - Drill from chapter I part 3\n"
              << "777 - Experiment\n"
              << "\n"
              << "0 - Quit\n"
@@ -67,6 +72,9 @@ void main_menu()
             break;
         case 5:
             repeated_words();
+            break;
+        case 6:
+            drill_1_3();
             break;
         case 777:
             experiment();
@@ -168,20 +176,20 @@ void repeated_words()
 
 void experiment()
 {
-    int i {20000};
+    cout << "nothing to look at here today\n";
+
+    //int i {20000};
     /* char c = i does not produce a warning on most compilers, while
      * char c {i} does. (this initialization notation introduced in c++11) */
     //char c {i};
-    int i2 {c};
+    //int i2 {c};
 
-    if(i != i2) {
-        cout << "A narrowing conversion happened.\n"
-             << "i == " << i << "\n"
-             << "i2 == " << i2 << "\n";
-    }
-    else {
-        cout << "Wow, we have large chars.\n";
-    }
-
-    //cout << "nothing to look at here today\n";
+    //if(i != i2) {
+    //    cout << "A narrowing conversion happened.\n"
+    //         << "i == " << i << "\n"
+    //         << "i2 == " << i2 << "\n";
+    //}
+    //else {
+    //    cout << "Wow, we have large chars.\n";
+    //}
 }
