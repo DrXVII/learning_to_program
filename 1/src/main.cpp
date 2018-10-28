@@ -14,6 +14,7 @@
 
 //homebrew
 #include "drill_1_3.hpp"
+#include "exercises_1_3.hpp"
 
 using namespace std;
 
@@ -38,14 +39,20 @@ void main_menu()
     int sel {0};
 
     do {
-        cout << "\n"
+        cout << "\n\n"
              << "*** MAIN MENU ***\n"
              << "1 - Greetings\n"
-             << "2 - Age calculation\n"
-             << "3 - Operations exampe: double precicioin\n"
-             << "4 - Operations exampe: integer\n"
-             << "5 - Repeated words\n"
-             << "6 - Drill from chapter I part 3\n"
+             << "2 -   Age calculation\n"
+             << "3 -   Operations exampe: double precicioin\n"
+             << "4 -   Operations exampe: integer\n"
+             << "5 -   Repeated words\n"
+             << "6 -   Drill from chapter I part 3\n"
+             << "7 -   Miles to Kilometers (ex I-3-2)\n"
+             << "8 -   Integer relationships (ex I-3-4)\n"
+             << "9 -   Double precision float relationships (ex I-3-5)\n"
+             << "10 -  Three int sort (ex I-3-6)\n"
+             << "11 -  Three string sort (ex I-3-7)\n"
+             << "12 -  Words to numbers (ex I-3-9)\n"
              << "777 - Experiment\n"
              << "\n"
              << "0 - Quit\n"
@@ -75,6 +82,24 @@ void main_menu()
             break;
         case 6:
             drill_1_3();
+            break;
+        case 7:
+            miles_to_km();
+            break;
+        case 8:
+            int_relations();
+            break;
+        case 9:
+            double_relations();
+            break;
+        case 10:
+            three_int_sort();
+            break;
+        case 11:
+            three_str_sort();
+            break;
+        case 12:
+            words_to_numbers();
             break;
         case 777:
             experiment();
