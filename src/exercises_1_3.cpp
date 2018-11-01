@@ -126,3 +126,71 @@ void words_to_numbers()
         cout << "\n";
     }
 }
+
+void simple_calc()
+{
+    cout << "Please enter an operator (e.g. +, -, etc) followed by two"
+        "variables\n"
+         << "Or, if you wish to leave this sub-program - type in \"exit\".\n";
+
+    string operation;
+    cin >> operation;
+    if(operation == "exit") {return;}
+
+    double var1 {0.0}, var2 {0.0};
+    cin >> var1 >> var2;
+
+    double result {0.0};
+    if(operation == "+") {result = var1 + var2;}
+    else if(operation == "-") {result = var1 - var2;}
+    else if(operation == "*") {result = var1 * var2;}
+    else if(operation == "/") {result = var1 / var2;}
+
+    cout << "\n"
+         << var1 << " " << operation << " " << var2 << " = " << result << "\n"
+         << "\n";
+        
+}
+
+void cent_counter()
+{
+    cout << "please input the number of pennies: ";
+    unsigned pennies {0};
+    cin >> pennies;
+    cout << "please input the number of nickels: ";
+    unsigned nickels {0};
+    cin >> nickels;
+    cout << "please input the number of dimes: ";
+    unsigned dimes {0};
+    cin >> dimes;
+    cout << "please input the number of quarters: ";
+    unsigned quarters {0};
+    cin >> quarters;
+    cout << "please input the number of half dollars: ";
+    unsigned half_dollars {0};
+    cin >> half_dollars;
+
+    unsigned total_cents = pennies +
+                           (nickels * 5) +
+                           (dimes * 10) +
+                           (quarters * 25) +
+                           (half_dollars * 50);
+
+    //deciding on correct suffixes (plural or singular)
+    string pennies_str = (pennies == 1)? "penny" : "pennies";
+    string nickels_str = (nickels == 1)? "nickel" : "nickels";
+    string dimes_str = (dimes == 1)? "dime" : "dimes";
+    string quarters_str = (quarters == 1)? "quarter" : "quarters";
+    string half_dollars_str = (half_dollars == 1)?
+        "half dollar" : "half dollars";
+
+    //the final print out
+    cout << "\n"
+         << "You have " << pennies << " " << pennies_str << ".\n"
+         << "You have " << nickels << " " << nickels_str << ".\n"
+         << "You have " << dimes << " " << dimes_str << ".\n"
+         << "You have " << quarters << " " << quarters_str << ".\n"
+         << "You have " << half_dollars << " " << half_dollars_str << ".\n"
+         << "The value of all your coins is $"
+             << total_cents / 100 << "." << total_cents % 100 << ".\n";
+}

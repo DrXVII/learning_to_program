@@ -11,3 +11,5 @@ void double_relations();
 void three_int_sort();
 void three_str_sort();
 void words_to_numbers();
+void simple_calc();
+void cent_counter();

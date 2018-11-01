@@ -53,6 +53,8 @@ void main_menu()
              << "10 -  Three int sort (ex I-3-6)\n"
              << "11 -  Three string sort (ex I-3-7)\n"
              << "12 -  Words to numbers (ex I-3-9)\n"
+             << "13 -  Simple calculator (ex I-3-10)\n"
+             << "14 -  Cent counter (ex I-3-11)\n"
              << "777 - Experiment\n"
              << "\n"
              << "0 - Quit\n"
@@ -100,6 +102,12 @@ void main_menu()
             break;
         case 12:
             words_to_numbers();
+            break;
+        case 13:
+            simple_calc();
+            break;
+        case 14:
+            cent_counter();
             break;
         case 777:
             experiment();
