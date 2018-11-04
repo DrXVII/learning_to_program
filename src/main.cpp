@@ -1,7 +1,11 @@
 /*******************************************************************************
- * This program is wiritten folowing along the book "Programming Principles
+ *     This program is wiritten folowing along the book "Programming Principles
  * and Practice using C++" by Bjarne Stroustrup.
  * Starting at part 1, chapter 2.
+ *
+ *     This program is not meant for any purpose but to complete, test and
+ * experiment with the various drills, exercises and examples provided in said
+ * book.
  ******************************************************************************/
 
 //this should heep us covered until chapter 5 vvv
@@ -25,6 +29,7 @@ void operations_double();
 void operations_int();
 void repeated_words();
 void experiment();
+void consts(); //unused and not meant to be used, just a compilation experiment
 
 int main()
 {
@@ -225,4 +230,20 @@ void experiment()
     //else {
     //    cout << "Wow, we have large chars.\n";
     //}
+}
+
+/* just testing out constexpr vs const,
+ * this procedure is not meant to be used in code*/
+void consts()
+{
+    int i {22}; __attribute__((unused))
+    const int c {i}; __attribute__((unused)) //OK
+    const int cc {33};
+    constexpr int cx {77};
+    //constexpr int cx_from_i {i}; //err: i is not usable as constant expression
+    //constexpr int cx_from_c {c}; //err: c was not initialised from constant ex
+    constexpr int cx_from_c {cc};
+
+    i = cx;
+    i = cx_from_c;
 }
