@@ -1,6 +1,6 @@
 /*******************************************************************************
  *     This program is wiritten folowing along the book "Programming Principles
- * and Practice using C++" by Bjarne Stroustrup.
+ * and Practice using C++ c++14 edition" by Bjarne Stroustrup.
  * Starting at part 1, chapter 2.
  *
  *     This program is not meant for any purpose but to complete, test and
@@ -19,6 +19,7 @@
 //homebrew
 #include "drill_1_3.hpp"
 #include "exercises_1_3.hpp"
+#include "try_this.hpp"
 
 using namespace std;
 
@@ -60,6 +61,7 @@ void main_menu()
              << "12 -  Words to numbers (ex I-3-9)\n"
              << "13 -  Simple calculator (ex I-3-10)\n"
              << "14 -  Cent counter (ex I-3-11)\n"
+             << "15 -  Coin converter (try-this ch 4.4.1)\n"
              << "777 - Experiment\n"
              << "\n"
              << "0 - Quit\n"
@@ -113,6 +115,9 @@ void main_menu()
             break;
         case 14:
             cent_counter();
+            break;
+        case 15:
+            coin_converter();
             break;
         case 777:
             experiment();

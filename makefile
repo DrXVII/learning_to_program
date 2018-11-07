@@ -7,7 +7,8 @@ OBJ_D = obj
 CXX_INC = -I $(INC_D)
 OBJ_ = main.o \
        drill_1_3.o \
-       exercises_1_3.o
+       exercises_1_3.o \
+       try_this.o
 OBJ = $(patsubst %, $(OBJ_D)/%, $(OBJ_))
 NAME = program
 
