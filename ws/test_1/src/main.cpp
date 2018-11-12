@@ -18,16 +18,16 @@ int main() {
 
     echo.on_message =
         [](shared_ptr<WsServer::Connection> connection,
-                shared_ptr<WsServer::Message> message)
+           shared_ptr<WsServer::Message> message)
         {
         auto message_str = message->string();
 
-        if(message->fin_rsv_opcode != WS_DATA_TYPE_TXT) {
-            cout << "Server: Received non-text data, closing connection"
-                 << endl;
-            connection->send_close(999);
-            return;
-        }
+        //if(message->fin_rsv_opcode != WS_DATA_TYPE_TXT) {
+        //    cout << "Server: Received non-text data, closing connection"
+        //         << endl;
+        //    connection->send_close(999);
+        //    return;
+        //}
 
         cout << "Server: Message received: \"" << message_str << "\" "
              << "from " << connection.get() << endl;
@@ -115,14 +115,14 @@ int main() {
             connection->send(send_stream);
         }
 
-        *send_stream << "before non_text";
-        connection->send(send_stream);
+        //*send_stream << "before non_text";
+        //connection->send(send_stream);
 
-        *send_stream << "non_text";
-        connection->send(send_stream, nullptr, WS_DATA_TYPE_BIN);
+        //*send_stream << "non_text";
+        //connection->send(send_stream, nullptr, WS_DATA_TYPE_BIN);
 
-        *send_stream << "after non_text";
-        connection->send(send_stream);
+        //*send_stream << "after non_text";
+        //connection->send(send_stream);
     };
 
     client.on_close = [](shared_ptr<WsClient::Connection> /*connection*/, int status, const string & /*reason*/) {

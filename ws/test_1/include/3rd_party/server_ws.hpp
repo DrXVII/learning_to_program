@@ -46,9 +46,6 @@ namespace SimpleWeb {
 }
 #endif
 
-/// fin_rsv_opcode: 129=one fragment, text, 130=one fragment, binary, 136=close connection.
-enum {WS_DATA_TYPE_TXT = 129, WS_DATA_TYPE_BIN = 130, WS_DATA_TYPE_CLOSE = 136};
-
 namespace SimpleWeb {
   template <class socket_type>
   class SocketServer;
